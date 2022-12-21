@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
+</head>
+<body>
+
+
+<input type="text" id="id1" placeholder="Зашифровать">
+<button onclick="code1()">Зашифровать</button>
+<input type="text" id="id2" placeholder="Расшифровать">
+<button onclick="code2()">Расшифровать</button>
+<script type="text/javascript">
+function code1(){
+
+var a = document.getElementById("id1").value
+var arrabc= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var arrsum= ['✽','❍','⟳','⟰','☡','⋲','⊻','⌘','⇚','⏏','♯','ⅻ','ℬ','∻','⋠','℄','∦','ᶔ','ᶓ','ᵫ','؁','؇','؏','ؕ','؛','d']
+var res = ''
+for(i=0;i<26;i++){
+var replace = arrabc[i];
+var re = new RegExp(replace,"g");
+var a = a.replace(re,arrsum[i])
+if(i==25)
+{
+var res = a
+}
+}
+document.write(res)
+}
+function code2(){
+
+var a = document.getElementById("id2").value
+var arrabc= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var arrsum= ['✽','❍','⟳','⟰','☡','⋲','⊻','⌘','⇚','⏏','♯','ⅻ','ℬ','∻','⋠','℄','∦','ᶔ','ᶓ','ᵫ','؁','؇','؏','ؕ','؛','d']
+var res = ''
+for(i=0;i<26;i++){
+var replace = arrsum[i];
+
+var re = new RegExp(replace,"gu");
+var a = a.replace(re,arrabc[i])
+if(i==25)
+{
+var res = a
+}
+}
+document.write(res)
+}
+</script>
+</body>
+</html>
